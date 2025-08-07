@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Main.css">
-    <title>Davids Portfolio | Home</title>
-    <link type="stylesheet" href="path/to/overlayscrollbars.css" rel="stylesheet" />
-    <script type="script" src="path/to/overlayscrollbars.browser.es.js" defer></script>
-    <script src="Scripts/Background.js"></script>
-</head>
-<body>
-    <!-- NavBar Section -->
-    <div class="NavBar">
-        <img href="index.html" src="Images/Drawing.png" alt="Logo">
-        <a href="#Creations">projects</a>
-        <a href="#About_Me">About Me</a>
+const Project = document.querySelector("[ProjectTemplate]")
+const userCardContainer = document.querySelector("[data-user-cards-container]")
+const searchInput = document.querySelector("[SearchInput]")
 
-    </div>
+let users = []
 
-    <!-- Home Page Section -->
-    <div id="Home_Page" class="HomePage">
-        <div class="Title">What's Good Gang?</div>
-    </div>
+searchInput.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase()
+  users.forEach(user => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value)
+    user.element.classList.toggle("hide", !isVisible)
+  })
+})
 
-        <div class="HomeContent">
-            <h1>Welcome my ninjas 🥷</h1>
-            <p>Whats up Gang? This is were I put my projects👍 So Scroll Down I guess for about me.</p>
-        </div>
-
-    <div style="height: 500px;"></div>
-    <div id="About_Me" class="AboutMe">
-        <div class="AboutTitle">
-            <h1>About Me</h1>
-        </div>
-        <div class="AboutContent">
-            <img src="Images/Gambling.png" alt="David" class="ProfilePic">
-            <p>Hi, I'm David! A tech enthusiast, creator, and all-around curious soul. I’ve always been fascinated by how things work and how they can be improved. I dive deep into everything from coding to graphic design, and I love turning ideas into reality. When I'm not experimenting with new technologies, you’ll probably find me gaming or getting lost in a good book.</p>
-            <p>I believe in the power of innovation and collaboration, and I'm always open to new opportunities and challenges. Let's connect and see what we can create together!</p>
-        </div>
-    </div>
-
-    <div style="height: 1000px;"></div>
-</body>
-</html>
+fetch("../Data/ProjectInfo.json")
+  .then(res => res.json())
+  .then(Projects => {
+    users = Projects.map(user => {
+      const card = userCardTemplate.content.cloneNode(true).children[0]
+      const header = card.querySelector("[Head]")
+      const Image = card.querySelector("[Image]")
+      const Description = card.querySelector("[Description]")
+      const Button = card.querySelector("[Button]")
+      header.textContent = user.name
+      body.textContent = user.email
+      userCardContainer.append(card)
+      return { name: user, email: user.email, element: card }
+    })
+  })
