@@ -1,0 +1,172 @@
+html {
+    background-color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    background-image: url(Images/PorscheFaded.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 0;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.NavBar {
+    width: calc(100% - 10px);
+    height: 50px;
+    border: 1px solid #ffffff7a;
+    padding-top: 25px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+    background: #16161671;
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+}
+
+.NavBar a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    float: right;
+    position: relative;
+}
+
+.NavBar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.2s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.NavBar a:hover::after {
+    width: 100%;
+}
+
+.NavBar img {
+    width: 210px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translate(-50%, -50%);
+}
+
+.Title {
+    text-shadow: -2px -2px 3px rgba(0, 0, 0, 0.87);
+    position: absolute;
+    font-size: 50px;
+    color: #ffffff;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    transition: top 0.3s ease;
+}
+
+.HomePage {
+    height: 100vh; /* Fullscreen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.HomeContent {
+    width: 50%;
+    margin: 0 auto;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 0;
+    background: #0000009d;
+    backdrop-filter: blur(3px);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.HomeContent h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.HomeContent p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+#About_Me {
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 0;
+    padding-top: 20px;
+    background: #0000009d;
+    backdrop-filter: blur(3px);
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.AboutMe {
+    padding-top: 100px;
+    width: 100%;
+}
+
+.AboutTitle h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.87);
+}
+
+.AboutContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.AboutContent p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: left;
+}
+
+.ProfilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.DividerCF {
+    border-top: 2px solid #ffffff;
+    margin-top: 40px;
+}
+
+.BackGround {
+    background: url('Images/PorscheFaded.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 0;
+    height: 100vh;
+    z-index: -1;
+}
