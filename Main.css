@@ -2,7 +2,7 @@ html {
     background-color: #000000;
     font-family: 'Courier New', Courier, monospace;
     align-items: center;
-    background-image: url(Images/PorscheFaded.png);
+    background-image: url(Images/WallPaper/PorscheFaded.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,10 +15,30 @@ body {
     padding: 0;
 }
 
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #00000000;
+  }
+
+  *::-webkit-scrollbar {
+    width: 16px;
+    position: fixed;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid #ff0000;
+  }
+
 .NavBar {
     width: calc(100% - 10px);
     height: 50px;
-    border: 1px solid #ffffff7a;
+    border: 1px solid #ffffff42;
     padding-top: 25px;
     position: fixed;
     top: 5px;
@@ -60,7 +80,7 @@ body {
     height: 70px;
     position: absolute;
     top: 50%;
-    left: 140px;
+    left: 100px;
     transform: translate(-50%, -50%);
 }
 
@@ -78,7 +98,7 @@ body {
 }
 
 .HomePage {
-    height: 100vh; /* Fullscreen height */
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +111,7 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 80px 0;
-    background: #0000009d;
+    background: #00000000;
     backdrop-filter: blur(3px);
     border-radius: 4px;
     display: flex;
@@ -101,6 +121,7 @@ body {
 }
 
 .HomeContent h1 {
+    text-shadow: -2px -2px 3px rgba(0, 0, 0, 0.87);
     font-size: 40px;
     margin-bottom: 20px;
 }
@@ -112,11 +133,11 @@ body {
 }
 
 #About_Me {
-    width: 100%;
+    width: calc(100% - 2px);
     margin: 0 auto;
     padding: 100px 0;
     padding-top: 20px;
-    background: #0000009d;
+    background: #2424249d;
     backdrop-filter: blur(3px);
     text-align: center;
     color: #ffffff;
@@ -126,6 +147,7 @@ body {
 .AboutMe {
     padding-top: 100px;
     width: 100%;
+    border: 1px solid #ffffff3d;
 }
 
 .AboutTitle h1 {
@@ -161,12 +183,71 @@ body {
     margin-top: 40px;
 }
 
+#Project_content {
+    width: 80%;
+    height: 1000px;
+    margin: 0 auto;
+    padding: 200px 0;
+    padding-top: 20px;
+    background: #24242400;
+    backdrop-filter: blur(3px);
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ffffff3d;
+}
+
+.ProjectPage {
+    padding-top: 50px;
+    width: 100%;
+}
+
+.Project {
+    float: left;
+    width: 15%;
+    aspect-ratio: 3/4;
+    margin: 1%;
+    padding-top: 20px;
+    background: #38478863;
+    backdrop-filter: blur(3px);
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ffffff3d;
+}
+
+.Project > .header {
+    padding: 10px;
+    font-size: 20px; 
+}
+
+.Project > img {
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+}
+
+.Project > button {
+    width: 60%;
+    margin: 10px auto;
+    padding: 10px;
+    background: #4061f3f5;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ffffff3d;
+}
+
 .BackGround {
-    background: url('Images/PorscheFaded.png');
+    background: url('Images/WallPaper/PorscheFaded.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center 0;
     height: 100vh;
     z-index: -1;
+}
+
+.hide {
+  display: none;
 }
